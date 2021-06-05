@@ -19,7 +19,6 @@ const FormState = ({children}) => {
     return ( 
         <FormContext.Provider
             value={{
-                formData: state,
                 updateForm
             }}
         >
