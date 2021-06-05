@@ -1,6 +1,5 @@
-import React, { useReducer, useState } from 'react';
+import React, { useState } from 'react';
 import FormContext from './FormContext';
-import FormReducer from './FormReducer';
 
 const FormState = ({children}) => {
     const [formState, setFormState] = useState({
@@ -9,17 +8,12 @@ const FormState = ({children}) => {
         homeOwner: 'Yes',
         range: '',
     })
-    const initialState = {
-    }
-
-    const [state, dispatch] = useReducer(FormReducer, initialState);
 
     const updateForm = (event) => {
         setFormState({
             ...formState,
             [event.target.name]: event.target.value
         })
-        console.log(formState)
     }
     
     return ( 
