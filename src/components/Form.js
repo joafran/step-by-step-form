@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import Email from "./FormSteps/Email";
 import HomeOwner from "./FormSteps/HomeOwner";
+import PhoneNumber from "./FormSteps/Phone";
 import Range from "./FormSteps/Range";
 import Select from "./FormSteps/Select";
 
 
 const Form = () => {
   const [currentStep, setStep] = useState(0);
-  const formSteps = [<HomeOwner />, <Range />, <Select />, <Email />];
+  const formSteps = [<Email />, <HomeOwner />, <Range />, <Select />, <PhoneNumber />];
   const [isComplete, setIsComplete] = useState(false);
   const width = ((currentStep + 1) / formSteps.length) * 100;
   
