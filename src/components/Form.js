@@ -56,7 +56,7 @@ const Form = () => {
                   {formSteps[currentStep]}
                 <div className="d-flex justify-content-between">
                     {currentStep ? (
-                      <button onClick={() => goBack()} className="mt-2 btn btn-secondary">Back</button>
+                      <button type="button" onClick={() => goBack()} className="mt-2 btn btn-secondary">Back</button>
                       ): null}
                     <button type="submit" className="mt-2 mx-2 btn btn-success">Next</button>
                 </div>
