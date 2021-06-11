@@ -3,10 +3,14 @@ import FormContext from './FormContext';
 
 const FormState = ({children}) => {
     const [formState, setFormState] = useState({
-        mail: '',
+        homeOwner: true,
         select: 'City Of Mesa',
-        homeOwner: 'Yes',
-        range: '',
+        range: '400',
+        mail: '',
+        firstName: '',
+        lastName: '',
+        phoneNumber: '',
+        roofArea: 'Full Sun'
     })
 
     const updateForm = (event) => {
@@ -19,6 +23,7 @@ const FormState = ({children}) => {
     return ( 
         <FormContext.Provider
             value={{
+                formState,
                 updateForm
             }}
         >

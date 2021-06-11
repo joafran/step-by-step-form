@@ -12,15 +12,15 @@ const Range = () => {
     }
 
     return ( 
-        <div>
+        <fieldset>
             <p>How much is your average monthly electric bill?</p>
             <h4 className="d-flex justify-content-center">${value}</h4>
             <input name="range" className="col-12" type="range" onChange={(e) => updateValue(e)} min={min} max={max} value={value} />
             <div className="d-flex justify-content-between">
                 <p>${min}</p>
-                <p>${max}</p>
+                <p>${max}+</p>
             </div>
-        </div>
+        </fieldset>
      );
 }
  

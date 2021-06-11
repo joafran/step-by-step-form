@@ -2,20 +2,20 @@ import React, { useContext } from 'react';
 import FormContext from '../../context/FormContext';
 
 const HomeOwner = () => {
-    const { updateForm } = useContext(FormContext);
+    const { updateForm, formState } = useContext(FormContext);
 
     return ( 
-        <div>
+        <fieldset>
             <p>Are you a homeowner?</p>
-                <div className="mb-2 d-flex align-items-center bg-light">
-                    <input className="m-3" onChange={(e) => updateForm(e)} value="Yes" name="homeOwner" type="radio" defaultChecked/>
+                <fieldset className="mb-2 d-flex align-items-center bg-light">
+                    <input className="m-3" onChange={(e) => updateForm(e)} value="true" name="homeOwner" type="radio" checked={JSON.parse(formState.homeOwner)} />
                     <label>Yes</label>
-                </div>
-                <div className="d-flex align-items-center bg-light">
-                    <input className="m-3" onChange={(e) => updateForm(e)} value="No" name="homeOwner" type="radio"/>
+                </fieldset>
+                <fieldset className="d-flex align-items-center bg-light">
+                    <input className="m-3" onChange={(e) => updateForm(e)} value="false" name="homeOwner" type="radio" checked={!JSON.parse(formState.homeOwner)} />
                     <label>No</label>
-                </div>
-        </div>
+                </fieldset>
+        </fieldset>
      );
 }
  

@@ -2,13 +2,13 @@ import React, { useContext } from 'react';
 import FormContext from '../../context/FormContext';
 
 const Email = () => {
-    const { updateForm } = useContext(FormContext);
+    const { updateForm, formState } = useContext(FormContext);
 
     return ( 
-        <div>
+        <fieldset>
             <p>What email address should your results be sent to?</p>
-            <input className="form-control" onChange={(e) => updateForm(e)} type="email" placeholder="Email Address" />
-        </div>
+            <input value={formState.mail} name="mail" required className="form-control" onChange={updateForm} type="email" placeholder="Email Address" />
+        </fieldset>
      );
 }
  
